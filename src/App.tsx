@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import ContactUs from './components/ContactUs';
+
+const pStyle = {color: 'red', fontSize: 20}
 
 function App() {
+  if(new Date().getDay() === 2) {
+    pStyle.color = 'green'
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p style={{color: 'red', fontSize: 20}}>This is a p tag</p>
+      <p style={pStyle}>This is a p tag</p>
+      <p className="AppPTAG">This is a p tag</p>
+      <hr/>
+      <ContactUs/>
     </div>
   );
 }
